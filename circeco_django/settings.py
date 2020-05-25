@@ -13,6 +13,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 
+if os.environ.get('DEVELOPMENT'): 
+    development = True 
+else:
+    development = False
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -24,10 +29,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9#@95*t1l7%_qbi%!ech(4&5k+5^d+r(4ua6*7xo0&c4jo(@5x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = development
 
-ALLOWED_HOSTS = ['https://git.heroku.com/circeco-django.git']
+ALLOWED_HOSTS = ['localhost', 
+                    os.environ.get('HOSTNAME')]
 
+host = os.environ.get('SITE_HOST')
+if host:
+    ALLOWED_HOSTS.append(host)
 
 # Application definition
 
@@ -75,15 +84,15 @@ WSGI_APPLICATION = 'circeco_django.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-#    DATABASES = {
-#        'default': {
-#            'ENGINE': 'django.db.backends.sqlite3',
-#            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#        }
-#    }
-
-
-DATABASES = {'default': dj_database_url.parse('postgres://oqgxvetmemhufz:4003d612d9f0988cf8283ef6b846ba19f17b4ae5e8d6a75b45390c27fbcaa889@ec2-54-246-85-151.eu-west-1.compute.amazonaws.com:5432/ddbfk59hpjrsem') }
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {'default': dj_database_url.parse('postgres://oqgxvetmemhufz:4003d612d9f0988cf8283ef6b846ba19f17b4ae5e8d6a75b45390c27fbcaa889@ec2-54-246-85-151.eu-west-1.compute.amazonaws.com:5432/ddbfk59hpjrsem') }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
