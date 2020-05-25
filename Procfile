@@ -1,1 +1,1 @@
-web:gunicorn circeco_django.wsgi:application
+web: gunicorn circeco_django.wsgi:application
