@@ -82,8 +82,8 @@ WSGI_APPLICATION = 'circeco_django.wsgi.application'
 #        }
 #    }
 
-DATABASE = {'default': dj_database_url.parse('postgres://oqgxvetmemhufz:4003d612d9f0988cf8283ef6b846ba19f17b4ae5e8d6a75b45390c27fbcaa889@ec2-54-246-85-151.eu-west-1.compute.amazonaws.com:5432/ddbfk59hpjrsem')}
 
+DATABASES = {'default': dj_database_url.parse('postgres://oqgxvetmemhufz:4003d612d9f0988cf8283ef6b846ba19f17b4ae5e8d6a75b45390c27fbcaa889@ec2-54-246-85-151.eu-west-1.compute.amazonaws.com:5432/ddbfk59hpjrsem') }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
