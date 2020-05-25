@@ -26,7 +26,7 @@ SECRET_KEY = '9#@95*t1l7%_qbi%!ech(4&5k+5^d+r(4ua6*7xo0&c4jo(@5x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://git.heroku.com/circeco-django.git']
 
 
 # Application definition
