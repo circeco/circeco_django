@@ -34,7 +34,6 @@ You can also add unlimited circular initiatives to share with the community and 
 
 ## 1. UX 
 
-
 ### Project Goal
 CIRCECO aim to create a "Circular Ecosystem" through a platform for sustatainable consumption that collects suggestion and alternatives ideas to the common wasteful take-make-dispose consumption of products and services. 
 My great interest and knowledge in sustaianblity lead me over the years came accross several sustainable alternatives to consumption that often are not evident, easy to find and actually sustaianble. 
@@ -79,12 +78,62 @@ Finally, the webApp can be navigate and consumed from any device and browser.
 
 ---
 ## 2. Design 
+Sleak, clean and straighforward user interface with focus on sustaianbility themes and important key words. 
+The use of colors is kept at minimum with lots of use of neutral black and white to mantain focus on key elements and to generate a crisp design. 
+
+### External Dependency
+[Materialize 1.0.2](https://materializecss.com/) I enjoyed using Materialize modern and professional-looking layout as a framework and the documentation was simple and clear for implementation with the ready-to-use codes.
+
+### Fonts 
+[Google Font](https://fonts.google.com/) the font-family used have lettersforms that are dynamic, designed for a modular system with a good balancing and that avoide repetitiviness. Their styles are suatable for headlines, short paragraphs or single word, which is what this site is mostly made of 
+  - [Khand](https://fonts.google.com/specimen/Khand?query=khand) 
+  - [Bebas Neue](https://fonts.google.com/?query=Bebas+Neue)
+
+### Icons 
+[Font Awesome 5.8.1](https://fontawesome.com/) Social Icon in the footer cannot be found in Materialize so Font Awesome can provide icons for more specific needs 
+
+### Colors 
+The eye-catching use of colors aim to highlight important reoccuring key words with the red. The red color is also a call for action for the emergency related to the state of the environmental. 
+Sustainability themes are represented with shades of greens as this is recognised to be a color associate with nature and sustainability. 
+Different shades of green are also commonly recognised in the field with different levels of sustaiability, stronger sustainability with deeper green while weaker susteainbiltiy towards a lighther green. 
+The custom logo created is also a reminder of the sustainability theme with different shades of green. 
+The colors employed together with the font create a specific custom theme recognizable among any other website. 
+
+- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
+- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
+- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
+- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
+- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
+
+### Wireframes 
+I have not used any program to make my wireframe but I have rather made a hand sketch [here](https://github.com/circeco/circdata/blob/master/static/img/circdata-sketch.jpg).
+
+
+---
+## 4. Technology Used
+
+### Languages 
+* HTML 
+* CSS 
+* JavaScript 
+* JSON
+* Python
+
+
+### Frameworks 
+* [Flask 1.0.2](http://flask.pocoo.org/)
+This microframework is used to render the back-end Python with the Front-End Materialize.
+
+* [jQuery 3.2.1](https://code.jquery.com/jquery/)
+This framework is very useful to keep the JS coding at minimum so can be used as fundation of my scripts. 
+
+
+### 
+
 
 
 ## 3. Features
 
-
-## 4. Technology Used
 
 
 ## 5. Database Schema 
