@@ -16,15 +16,17 @@ You can also add unlimited circular initiatives to share with the community and 
     - [**User Stories**](#user-stories)
     - [**User Expectation**](#user-expectation)
 2. [**Design**](#ux)
+    - [**Design Dependency**](#design-dependency)
     - [**Fonts**](#fonts)
-    - [**Icons**](#Icons)
+    - [**Icons**](#icons)
     - [**Colors**](#colors)
-3. [**Features**](#features)
+    - [**Wireframe**](#wireframe)
+3. [**Technologies Used**](#technologies-used)
+    - [**Languages**](#languages)
+    - [**Frameworks**](#frameworks)
+4. [**Features**](#features)
     - [**Existing**](#existing)
     - [**Left to Implemtent**](#left-to-implement)
-4. [**Technologies Used**](#technologies-used)
-    - [**Front End Technologies**](#front-end-technologies)
-    - [**Back End Technologies**](#back-end-technologies)
 5. [**Database Schema**](#Database-schema)
 6. [**Testing**](#testing)
 7. [**Deployment**](#deployment)
@@ -81,7 +83,7 @@ Finally, the webApp can be navigate and consumed from any device and browser.
 Sleak, clean and straighforward user interface with focus on sustaianbility themes and important key words. 
 The use of colors is kept at minimum with lots of use of neutral black and white to mantain focus on key elements and to generate a crisp design. 
 
-### External Dependency
+### Design Dependency
 [Materialize 1.0.2](https://materializecss.com/) I enjoyed using Materialize modern and professional-looking layout as a framework and the documentation was simple and clear for implementation with the ready-to-use codes.
 
 ### Fonts 
@@ -105,12 +107,12 @@ The colors employed together with the font create a specific custom theme recogn
 - ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
 - ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
 
-### Wireframes 
+### Wireframe 
 I have not used any program to make my wireframe but I have rather made a hand sketch [here](https://github.com/circeco/circdata/blob/master/static/img/circdata-sketch.jpg).
 
 
 ---
-## 4. Technology Used
+## 4. Technologies Used
 
 ### Languages 
 * HTML 
