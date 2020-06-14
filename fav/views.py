@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect, reverse
+from .models import UserFavouriteShop
+from shops.models import Shop
+
 
 # Create your views here.
 def view_fav(request):
-    """A View that renders the cart contents page"""
-    return render(request, "fav.html")
+    """A View that renders the fav contents page"""
+    favs = UserFavouriteShop.objects.all().filter(user = request.user)
+    return render(request, "fav.html", {"fav_items": favs})
 
 
 def add_to_fav(request, shopId):
@@ -14,7 +18,13 @@ def add_to_fav(request, shopId):
 
     print(shopId, userId)
 
-    return redirect(reverse('index'))
+    shop = Shop.objects.get(id=shopId)
+    newFav = UserFavouriteShop(user=userId, shop=shop)
+    newFav.save()
+
+    print(newFav.id)
+
+    return redirect(reverse('view_fav'))
 
 
 def remove_fav(request, shopId):
