@@ -11,7 +11,7 @@
                 <p class="shop-web">{{ shop.webURL }}</p>
                 <p>{{ shop.serviceType }}</p>
 
-                <form method="post" action="{% url 'add_to_cart' shop.id %}">
+                <form method="post" action="{% url 'add_to_fav' shop.id %}">
                     {% csrf_token %}
                     <div class="input-group">
                         <span class="input-group-btn">
