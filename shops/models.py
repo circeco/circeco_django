@@ -10,9 +10,4 @@ class Shop(models.Model):
     def __str__(self): 
         return self.name
 
-class UserFavouriteShop(models.Model):
-    user = models.ForeignKey(User, null=False)
-    shop = models.ForeignKey(Shop, null=False)
-    # TODO UNIQUE/INDEX (user, shop)
-
 
