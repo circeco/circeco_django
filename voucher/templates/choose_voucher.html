@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row row-flex">
+    
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
+            <div class="panel-body">
+
+                <h3>Voucher</h3>
+
+                <form method="post" action="{% url 'create_voucher' %}">
+                    {% csrf_token %}
+
+                    <div class="input-field col s12">
+                        <select name="amount">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="10">Option 10</option>
+                        <option value="20">Option 20</option>
+                        <option value="30">Option 30</option>
+                        </select>
+                        <label>Materialize Select</label>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-success" type="submit">Buy</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+</div>
+{% endblock %}

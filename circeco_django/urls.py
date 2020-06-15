@@ -27,6 +27,7 @@ from django.views import static
 from .settings import MEDIA_ROOT
 from shops import urls as urls_shops
 from fav import urls as urls_fav
+from voucher import urls as urls_voucher
 
 
 
@@ -41,5 +42,6 @@ urlpatterns = [
     url(r'^search/', include(urls_search)),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
     url(r'^shops/', include(urls_shops)),
-    url(r'^fav/', include(urls_fav))
+    url(r'^fav/', include(urls_fav)),
+    url(r'^voucher/', include(urls_voucher))
 ]
