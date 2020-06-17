@@ -1,15 +1,16 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib.auth.decorators import login_required
 from .models import UserFavouriteShop
 from shops.models import Shop
 
 
-# Create your views here.
+@login_required()
 def view_fav(request):
     """A View that renders the fav contents page"""
     favs = UserFavouriteShop.objects.all().filter(user = request.user) # TODO "project" only shop 
     return render(request, "fav.html", {"fav_items": favs})
 
-
+@login_required()
 def add_to_fav(request, shopId):
     """xxx"""
 
@@ -26,7 +27,7 @@ def add_to_fav(request, shopId):
 
     return redirect(reverse('view_fav'))
 
-
+@login_required()
 def remove_fav(request, shopId):
     """
     Adjust the quantity of the specified product to the specified
