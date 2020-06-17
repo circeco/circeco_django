@@ -1,4 +1,22 @@
 {% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load materializecss %}
+
+{% block head_js %}
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript">
+    //<![CDATA[
+        Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+</script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+{% endblock %}
+
 
 {% block content %}
 <div class="row row-flex">
@@ -8,24 +26,25 @@
 
                 <h3>Voucher</h3>
 
-                <form method="post" action="{% url 'create_voucher' %}">
+                <form id="voucher-form" method="post" action="{% url 'create_voucher' %}">
                     {% csrf_token %}
 
-                    <div class="input-field col s12">
-                        <select name="amount">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="10">Option 10</option>
-                        <option value="20">Option 20</option>
-                        <option value="30">Option 30</option>
-                        </select>
-                        <label>Materialize Select</label>
+                    <div id="credit-card-errors" style="display: none;">
+                        <div class="alert-message block-message error" id="stripe-error-message"></div>
                     </div>
+
+                    <div class="form-group col-md-6">
+                        {{ form | materializecss }}
+                    </div>
+
                     <div class="input-group">
                         <span class="input-group-btn">
                             <button class="btn btn-success" type="submit">Buy</button>
                         </span>
                     </div>
+
                 </form>
+
             </div>
         </div>
     

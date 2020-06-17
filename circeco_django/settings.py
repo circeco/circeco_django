@@ -58,7 +58,8 @@ INSTALLED_APPS = [
     'storages',
     'shops',
     'fav',
-    'voucher'
+    'voucher',
+    'materializecssform'
 ]
 
 MIDDLEWARE = [
