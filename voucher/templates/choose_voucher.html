@@ -3,18 +3,15 @@
 {% load materializecss %}
 
 {% block head_js %}
+
 <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
     //<![CDATA[
         Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+<script type="text/javascript" src="/static/js/stripe.js"></script>
 {% endblock %}
 
 
@@ -26,7 +23,7 @@
 
                 <h3>Voucher</h3>
 
-                <form id="voucher-form" method="post" action="{% url 'create_voucher' %}">
+                <form id="payment-form" method="post" action="{% url 'create_voucher' %}">
                     {% csrf_token %}
 
                     <div id="credit-card-errors" style="display: none;">

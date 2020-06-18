@@ -7,6 +7,8 @@ from django.contrib import messages
 from .forms import BuyVoucherForm
 from circeco_django import settings
 
+stripe.api_key = settings.STRIPE_SECRET
+
 
 @login_required()
 def choose_voucher(request): 
@@ -26,6 +28,7 @@ def create_voucher(request):
     # amount = request.POST.get('amount')
     #print(f'create voucher user={user} amount={amount}')
     amount = int(form.cleaned_data['amount'])
+
     try:
         customer = stripe.Charge.create(
             amount=amount,
@@ -35,13 +38,17 @@ def create_voucher(request):
         )
     except stripe.error.CardError:
         messages.error(request, "Your card was declined!")
+        # TODO Then what? 
     
     if customer.paid:
         messages.error(request, "You have successfully paid")
+        # TODO Save voucher here 
+
         return redirect(reverse('voucher'))
     else:
         messages.error(request, "Unable to take payment")
 
+    # TODO If we get here there has been no payment!
 
     newVoucher = Voucher(user=user, amount=amount)
     newVoucher.save()

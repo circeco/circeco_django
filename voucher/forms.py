@@ -3,9 +3,9 @@ from django import forms
 
 class BuyVoucherForm(forms.Form):
 
-    MONTH_CHOICES = [(i, i) for i in range(1, 12)]
+    MONTH_CHOICES = [(i, i) for i in range(1, 13)]
     YEAR_CHOICES = [(i, i) for i in range(2019, 2036)]
-    VOUCHER_AMOUNT = [(i, i) for i in [10,20,30]]
+    VOUCHER_AMOUNT = [(i*100, i) for i in [100,200,300]]
 
     amount = forms.ChoiceField(label='Amount', choices=VOUCHER_AMOUNT, required=True)
 
