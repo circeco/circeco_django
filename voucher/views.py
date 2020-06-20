@@ -38,20 +38,19 @@ def create_voucher(request):
         )
     except stripe.error.CardError:
         messages.error(request, "Your card was declined!")
-        # TODO Then what? 
     
     if customer.paid:
         messages.error(request, "You have successfully paid")
-        # TODO Save voucher here 
 
-        return redirect(reverse('voucher'))
+        # Save voucher here 
+        newVoucher = Voucher(user=user, amount=amount)
+        newVoucher.save()
+        print(newVoucher.id)
+
+        return render(request, 'view_voucher.html', {"voucher": newVoucher})
     else:
         messages.error(request, "Unable to take payment")
 
-    # TODO If we get here there has been no payment!
+    # If we get here there has been no payment!
 
-    newVoucher = Voucher(user=user, amount=amount)
-    newVoucher.save()
-    print(newVoucher.id)
-
-    return render(request, 'view_voucher.html', {"voucher": newVoucher})
+    return render(request, 'choose_voucher.html', {"form": form, "publishable": settings.STRIPE_PUBLISHABLE})
