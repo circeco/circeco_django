@@ -47,10 +47,19 @@ def create_voucher(request):
         newVoucher.save()
         print(newVoucher.id)
 
-        return render(request, 'view_voucher.html', {"voucher": newVoucher})
+        targetUrl = request.build_absolute_uri(reverse('verify_voucher', args=(newVoucher.id,)))
+        # TODO This should be the URL that goes into the QR
+
+        return render(request, 'view_voucher.html', {"voucher": newVoucher, "targetUrl": targetUrl})
     else:
         messages.error(request, "Unable to take payment")
 
     # If we get here there has been no payment!
 
     return render(request, 'choose_voucher.html', {"form": form, "publishable": settings.STRIPE_PUBLISHABLE})
+
+
+# login not required
+def verify_voucher(request, id):
+    voucher = Voucher.objects.get(id=id)
+    return render(request, 'verify_voucher.html', {"voucher": voucher})
