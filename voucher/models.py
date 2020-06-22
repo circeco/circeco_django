@@ -6,5 +6,5 @@ class Voucher(models.Model):
     user = models.ForeignKey(User, null=False) 
 
     def __str__(self):
-        # return self.user.username + '_' + self.amount
+
         return f'{self.user.username}_{self.id}_{self.amount}'
