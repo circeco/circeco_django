@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<p>Voucher is {{ voucher }} at {{ targetUrl }} </p>
+<p>Voucher is {{ voucher }}</p>
 
 <div>
-    <img src="" alt="">
+    <img src="{% url 'voucher' voucher.id %}" alt="voucher">
 </div>
 
 

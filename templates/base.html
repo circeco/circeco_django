@@ -27,6 +27,7 @@
                     <ul id="nav-mobile" class="left hide-on-med-and-down">
                         <li><a href="/"><img class="logo" src="/static/img/navbar-logo.jpg" alt="logo"></a></li>
                         <li><a href="{% url 'shops' %}">Circular Shops</a></li>
+                        <li><a href="{% url 'choose_voucher' %}">Voucher</a></li>            
                             {% if user.is_authenticated %}
                                 <li><a href="{% url 'profile' %}">&nbsp; Profile &nbsp;</a></li>
                                 <li><a href="{% url 'logout' %}">&nbsp; Log Out &nbsp;</a></li>
@@ -40,6 +41,7 @@
                         <li>&nbsp; &nbsp;</li>
                         <li><a href="/">Home</a></li>
                         <li><a href="{% url 'shops' %}">Circular Shops</a></li>
+                        <li><a href="{% url 'choose_voucher' %}">Voucher</a></li>
                             {% if user.is_authenticated %}
                                 <li><a href="{% url 'profile' %}">Profile</a></li>
                                 <li><a href="{% url 'logout' %}">Log Out</a></li>

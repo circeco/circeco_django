@@ -50,7 +50,7 @@ def create_voucher(request):
         newVoucher.save()
         print(newVoucher.id)
         
-        return display_QR(request, newVoucher.id)
+        return render(request, 'view_voucher.html', {"voucher": newVoucher})
     else:
         messages.error(request, "Unable to take payment")
 
