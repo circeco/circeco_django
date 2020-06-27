@@ -1,6 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Chathura:100,300,400,700,800|Economica:400,400i,700,700i|Khand:300,400,500,600,700|Londrina+Outline');
+
+/*---------------------Base.html*/
 body {
-    font-family: Arial;
+    margin: 0;
+    font-family: 'Khand', sans-serif;
+    font-size: 20px;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 3px;
+    border-left: 0;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #FF5252;
+    border-radius: 0px;
+}
+
+
+nav ul a, nav .brand-logo {
+    color: black;
+    max-height: 64px;
+    font-size: 20px;
+    font-family: 'Bebas Neue', sans-serif; 
+}
+
+.mobile-nav {
+    font-size: 20px !important;
+    opacity: 0.9;
+}
+
+#sidenav-overlay {
+    position: unset;
+}
+
+.side-nav {
+    width: 200px;
+}
+
+nav .brand-logo {
+    font-family: 'Bebas Neue', sans-serif; 
+    margin-right: 10px;
+}
+
+.logo {
+    height: 45px;
+    width: 45px;
+    margin: 8px;
+    transition: 0.4s;
+    border-radius: .25rem;
+}
+
+.logo:hover {
+    transform: scale(0.9, 0.9);
+}
+
+.underline {
+    margin: 0;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+}
+
+.row {
+    margin: 80px;
+}
+
+
+
+
+
+
+
+
+/*---------------------initial-codes (to delete)*/
 
 footer {
     margin-top: 40px;

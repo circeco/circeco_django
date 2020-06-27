@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <link rel="stylesheet" href="/static/css/custom.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -18,29 +18,41 @@
 </head>
 <body>
     <!-- Fixed masthead -->
-    <nav>
-        <div class="nav-wrapper">
-        <a href="#" class="brand-logo">CIRCECO</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="{% url 'shops' %}">Shops</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'profile' %}">Profile</a></li>
-                <li><a href="{% url 'logout' %}">Log Out</a></li>
-            {%  else %}
-                <li><a href="{% url 'registration' %}">Register</a></li>
-                <li><a href="{% url 'login' %}">Log In</a></li>
-            {% endif %}
-            <li>
-                <a href="{% url 'view_cart' %}">
-                    Cart
-                    {% if product_count > 0 %}
-                    <label class="badge badge-warning">{{ product_count }}</label>
-                    {% endif %}
-                </a>
-            </li>
-        </ul>
+    <header>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper white">
+                    <a href="/" class="right brand-logo">circeco.org</a>
+                    <a href="/" data-activates="mobile-demo" class="button-collapse"><img class="logo" src="/static/img/navbar-logo.jpg" alt="logo"></a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
+                        <li><a href="/"><img class="logo" src="/static/img/navbar-logo.jpg" alt="logo"></a></li>
+                        <li><a href="{% url 'shops' %}">Circular Shops</a></li>
+                            {% if user.is_authenticated %}
+                                <li><a href="{% url 'profile' %}">&nbsp; Profile &nbsp;</a></li>
+                                <li><a href="{% url 'logout' %}">&nbsp; Log Out &nbsp;</a></li>
+                            {%  else %}
+                                <li><a href="{% url 'registration' %}">&nbsp; Register &nbsp;</a></li>
+                                <li><a href="{% url 'login' %}">&nbsp; Log In &nbsp;</a></li>
+                            {% endif %}
+                    </ul>   
+                    <!-- Mobile view -->                 
+                    <ul class="side-nav" id="mobile-demo">
+                        <li>&nbsp; &nbsp;</li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="{% url 'shops' %}">Circular Shops</a></li>
+                            {% if user.is_authenticated %}
+                                <li><a href="{% url 'profile' %}">Profile</a></li>
+                                <li><a href="{% url 'logout' %}">Log Out</a></li>
+                            {%  else %}
+                                <li><a href="{% url 'registration' %}">Register</a></li>
+                                <li><a href="{% url 'login' %}">Log In</a></li>
+                            {% endif %}
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
+
 
 
     {% if messages %}
@@ -54,10 +66,6 @@
     {% endif %}
     <div class="container">
         <div class="display">
-            <form action="{% url 'search' %}" method="get">
-                <input type="text" name="q">
-                <button type="submit">Search</button>
-            </form>
         </div>
         {% block content %} {% endblock %}
     </div>
@@ -67,7 +75,7 @@
         </div>
     </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="{% static 'js/main.js' %}"></script>
+    <script src="/static/js/main.js"></script>
     </body>
 </html>
 
