@@ -1,4 +1,5 @@
 {% extends 'base.html' %} 
+{% load static from staticfiles %}
 
 {% block page_title %}{{ user }}'s Profile{% endblock %} 
 
@@ -6,4 +7,40 @@
 
 {% block content %}
 <p>{{ profile.email }}</p>
+
+<div class="row row-flex">
+    {% for item in fav_items %}
+    
+    <div class="card z-depth-5 col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">
+                
+        <div class="caption">
+            <h3>{{ item.shop.name }}</h3>
+            <p class="shop-description">{{ item.shop.description }}</p>
+            <p>    
+                <form class="form-inline" method="post" action="{% url 'remove_fav' item.shop.id %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">Description</div>
+                            <input name="quantity" type="number" min="0" max="999" class="form-control">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Unfav</button>
+                </form>
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<div class="row row-flex">
+    {% for voucher in vouchers %}
+        <p>Voucher is {{ voucher }}</p>
+
+    {% endfor %}
+</div>
+
+
 {% endblock %}

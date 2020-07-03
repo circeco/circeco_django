@@ -12,7 +12,7 @@ def view_fav(request):
 
 @login_required()
 def add_to_fav(request, shopId):
-    """xxx"""
+    """Add a selected shop to the user's favourite list"""
 
     userId = request.user
     # TODO associate userId and shopId
@@ -29,10 +29,7 @@ def add_to_fav(request, shopId):
 
 @login_required()
 def remove_fav(request, shopId):
-    """
-    Adjust the quantity of the specified product to the specified
-    amount
-    """
+    """Remove a selected shop from the user's favourite list"""
     
     shop = Shop.objects.get(id=shopId)
     afav = UserFavouriteShop.objects.get(user=request.user, shop=shop) # TODO handle exception

@@ -3,6 +3,9 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
+from fav.models import UserFavouriteShop
+from voucher.models import Voucher
+
 
 
 def index(request):
@@ -65,4 +68,6 @@ def registration(request):
 def user_profile(request):
     """The user's profile page"""
     user = User.objects.get(email=request.user.email)
-    return render(request, 'profile.html', {"profile": user})
+    favs = UserFavouriteShop.objects.all().filter(user = request.user)
+    vouchers = Voucher.objects.filter(user = user)
+    return render(request, 'profile.html', {"profile": user, "fav_items": favs, "vouchers": vouchers})
