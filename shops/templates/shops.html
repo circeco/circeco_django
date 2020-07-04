@@ -1,16 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <script>
-	function toggleFav(btn) {
-        var x = btn.firstElementChild;
-        if (x.innerHTML === "star_border") {
-            // TODO post to backend 
-            x.innerHTML = "star";
+    function toggleFav(btn, shopId, csrf) {
+        let x = btn.firstElementChild;
+        let isFavourite = x.innerHTML === "star";
+        if (!isFavourite) {
+            $.ajax({
+                type: "PUT",
+                url: `/fav/add/${shopId}/ws`,
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("X-CSRFToken", csrf);
+                },
+                success: function(data, status, xhr) {
+                    x.innerHTML = "star";
+                }
+            })
         } else {
-            // TODO post to backend 
-            x.innerHTML = "star_border";
+            $.ajax({
+                type: "PUT",
+                url: `/fav/remove/${shopId}/ws`,
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader("X-CSRFToken", csrf);
+                },
+                success: function(data, status, xhr) {
+                    x.innerHTML = "star_border";
+                }
+            })
         }
     }
 </script>
@@ -26,7 +42,9 @@
 			<!--method="post" action="{% url 'add_to_fav' shop.id %}"-->
 			<div class="input-group">
 				<span class="input-group-btn">
-                    <button onclick="toggleFav(this)" class="btn-floating waves-effect waves-light teal" type="submit">
+                    <button 
+                    onclick="toggleFav(this, {{ shop.id }}, '{{ csrf_token }}')" 
+                    class="btn-floating waves-effect waves-light teal" type="submit">
                         <i id="star" class="medium material-icons">star_border</i>
                     </button>
                 </span>
