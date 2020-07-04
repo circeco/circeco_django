@@ -11,14 +11,28 @@
                 <p class="shop-web">{{ shop.webURL }}</p>
                 <p>{{ shop.serviceType }}</p>
 
-                <form method="post" action="{% url 'add_to_fav' shop.id %}">
-                    {% csrf_token %}
+                <!--method="post" action="{% url 'add_to_fav' shop.id %}"-->
+                    <script>
+                        function toggleFav(btn) {
+                            var x = btn.firstElementChild;
+                            if (x.innerHTML === "star_border") {
+                                // TODO post to backend 
+                                x.innerHTML = "star";
+                            } else {
+                                // TODO post to backend 
+                                x.innerHTML = "star_border";
+                            }
+                        }
+                    </script>
                     <div class="input-group">
                         <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Add</button>
+                            <button onclick="toggleFav(this)" class="btn-floating waves-effect waves-light teal" type="submit">
+                                <i id="star" class="medium material-icons">star_border</i>
+                            </button>
                         </span>
                     </div>
-                </form>
+
+
             </div>
         </div>
     {% endfor %}
