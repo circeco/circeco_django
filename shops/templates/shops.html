@@ -4,7 +4,7 @@
 <script>
     function toggleFav(btn, shopId, csrf) {
         let x = btn.firstElementChild;
-        let isFavourite = x.innerHTML === "star";
+        let isFavourite = x.innerHTML.trim() === "star";
         if (!isFavourite) {
             $.ajax({
                 type: "PUT",
@@ -39,16 +39,22 @@
 			<p class="shop-description">{{ shop.description }}</p>
 			<p class="shop-web">{{ shop.webURL }}</p>
 			<p>{{ shop.serviceType }}</p>
-			<!--method="post" action="{% url 'add_to_fav' shop.id %}"-->
 			<div class="input-group">
 				<span class="input-group-btn">
                     <button 
-                    onclick="toggleFav(this, {{ shop.id }}, '{{ csrf_token }}')" 
-                    class="btn-floating waves-effect waves-light teal" type="submit">
-                        <i id="star" class="medium material-icons">star_border</i>
+                        onclick="toggleFav(this, {{ shop.id }}, '{{ csrf_token }}')" 
+                        class="btn-floating waves-effect waves-light teal" type="submit">
+                            <i class="medium material-icons">
+                                {% if shop.id in favs %}
+                                    star
+                                {% else %}
+                                    star_border
+                                {% endif %}
+                            </i>
                     </button>
                 </span>
 			</div>
+            
 		</div>
 	</div>
 	{% endfor %}
