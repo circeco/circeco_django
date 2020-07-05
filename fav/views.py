@@ -38,7 +38,7 @@ def remove_fav(request, shopId):
     afav = UserFavouriteShop.objects.get(user=request.user, shop=shop) # TODO handle exception
     afav.delete() 
 
-    return redirect(reverse('view_fav'))
+    return redirect(reverse('profile'))
 
 @login_required()
 @require_http_methods(["PUT"])
