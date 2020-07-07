@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<p>Voucher is {{ voucher }}</p>
-
+<!--create modal to display voucher-->
 <div>
+    <p>Voucher is {{ voucher }}</p>
     <img src="{% url 'voucher' voucher.id %}" alt="voucher">
 </div>
 

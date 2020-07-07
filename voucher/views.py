@@ -8,7 +8,7 @@ from django.contrib import messages
 from .forms import BuyVoucherForm
 from circeco_django import settings
 import json
-from django.http.response import HttpResponse
+from django.http.response import HttpResponse, HttpResponseForbidden, HttpResponseNotFound
 
 stripe.api_key = settings.STRIPE_SECRET
 
@@ -22,14 +22,9 @@ def choose_voucher(request):
 
 @login_required()
 def create_voucher(request):
-    """xxx"""
-
     user = request.user
     form = BuyVoucherForm(request.POST)
     print(form)
-
-    # amount = request.POST.get('amount')
-    #print(f'create voucher user={user} amount={amount}')
     amount = int(form.cleaned_data['amount'])
 
     try:
@@ -50,22 +45,28 @@ def create_voucher(request):
         newVoucher.save()
         print(newVoucher.id)
         
-        return render(request, 'view_voucher.html', {"voucher": newVoucher})
+        return redirect(reverse('profile'))
     else:
         messages.error(request, "Unable to take payment")
 
     # If we get here there has been no payment!
     return render(request, 'choose_voucher.html', {"form": form, "publishable": settings.STRIPE_PUBLISHABLE})
 
+@login_required()
 def display_QR(request, id):
-    voucher = Voucher.objects.get(id=id) # TODO check exception if not found
-    # TODO Check voucher belongs to user
-    targetUrl = request.build_absolute_uri(reverse('verify_voucher', args=(id,)))
-    image = makeQR(targetUrl)   
-    response = HttpResponse(image, content_type='image/png')
-    return response
+    try:
+        voucher = Voucher.objects.get(id=id)
+    except:
+        return HttpResponseNotFound("Voucher not found!")
+    
+    if request.user != voucher.user.username:
+        return HttpResponseForbidden("Naughty, naughty!")
 
-# login not required
+    targetUrl = request.build_absolute_uri(reverse('verify_voucher', args=(id,)))    
+    image = makeQR(targetUrl)
+    return HttpResponse(image, content_type='image/png')
+
+
 def verify_voucher(request, id):
     voucher = Voucher.objects.get(id=id)
     return render(request, 'verify_voucher.html', {"voucher": voucher})
