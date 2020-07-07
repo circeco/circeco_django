@@ -45,7 +45,7 @@ nav .brand-logo {
     margin-right: 10px;
 }
 
-.logo {
+#logo {
     height: 45px;
     width: 45px;
     margin: 8px;
@@ -53,7 +53,7 @@ nav .brand-logo {
     border-radius: .25rem;
 }
 
-.logo:hover {
+#logo:hover {
     transform: scale(0.9, 0.9);
 }
 
@@ -71,10 +71,47 @@ nav .brand-logo {
 }
 
 
+/*---------------------Cards*/
+
+.card {
+    width: 300px;
+    height: 400px;
+    margin: 5% auto;
+}
+
+.card .card-content {
+    padding: 0;
+}
+
+.card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    padding: 30px 20px;
+}
 
 
+.voucher {
+    width: 100%;
+    height: auto;
+    border-style: dashed;
+    border-radius: 15px;
+    border-color: #134f5cff;
+}
 
+.voucher h1 {
+    font-size: 30px;
+    font-family: 'Chathura', sans-serif;
+    font-weight: 700;
+}
 
+#qrcode {
+    width: 100%;
+    padding: 5%;
+}
+
+#recycle-logo {
+    width: 100%;
+    margin: 15%;
+}
 
 
 /*---------------------initial-codes (to delete)*/
