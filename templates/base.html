@@ -23,9 +23,9 @@
             <nav>
                 <div class="nav-wrapper white">
                     <a href="/" class="right brand-logo">circeco.org</a>
-                    <a href="/" data-activates="mobile-demo" class="button-collapse"><img class="logo" src="/static/img/navbar-logo.jpg" alt="logo"></a>
+                    <a href="/" data-activates="mobile-demo" class="button-collapse"><img id="logo" src="/static/img/navbar-logo.jpg" alt="logo"></a>
                     <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li><a href="/"><img class="logo" src="/static/img/navbar-logo.jpg" alt="logo"></a></li>
+                        <li><a href="/"><img id="logo" src="/static/img/navbar-logo.jpg" alt="logo"></a></li>
                         <li><a href="{% url 'shops' %}">Circular Shops</a></li>
                         <li><a href="{% url 'choose_voucher' %}">Voucher</a></li>            
                             {% if user.is_authenticated %}
