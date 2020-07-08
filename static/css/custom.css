@@ -70,6 +70,14 @@ nav .brand-logo {
     margin: 80px;
 }
 
+div.alert {
+    margin: 10%;
+    text-align: center;
+}
+
+form {
+    margin: 10%;
+}
 
 /*---------------------Cards*/
 
