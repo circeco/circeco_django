@@ -79,6 +79,22 @@ form {
     margin: 10%;
 }
 
+#author {
+    position: fixed;
+    bottom: 0px;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #A9A9A9
+}
+
+#author a:hover {
+    color: #FF5252;
+}
+
+#author a {
+    color: #134f5cff;
+}
+
 /*---------------------Cards*/
 
 .card {
