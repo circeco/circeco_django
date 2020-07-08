@@ -40,10 +40,8 @@ def create_voucher(request):
     if customer.paid:
         messages.error(request, "You have successfully paid")
 
-        # Save voucher here 
-        newVoucher = Voucher(user=user, amount=amount)
-        newVoucher.save()
-        print(newVoucher.id)
+        newVoucher = Voucher(user=user, amount=amount)       
+        newVoucher.save() # TODO Check for error!
         
         return redirect(reverse('profile'))
     else:
@@ -52,6 +50,7 @@ def create_voucher(request):
     # If we get here there has been no payment!
     return render(request, 'choose_voucher.html', {"form": form, "publishable": settings.STRIPE_PUBLISHABLE})
 
+
 @login_required()
 def display_QR(request, id):
     try:
@@ -59,12 +58,17 @@ def display_QR(request, id):
     except:
         return HttpResponseNotFound("Voucher not found!")
     
-    if request.user != voucher.user.username:
+    if request.user != voucher.user:
+        print(f'naughty user {request.user} trying to read what belongs to {voucher.user}')
         return HttpResponseForbidden("Naughty, naughty!")
+        
+    if voucher.image == None:
+        targetUrl = request.build_absolute_uri(reverse('verify_voucher', args=(voucher.id,)))    
+        image = makeQR(targetUrl) # TODO Check for error!
+        voucher.image = image
+        voucher.save() # TODO Check for error
 
-    targetUrl = request.build_absolute_uri(reverse('verify_voucher', args=(id,)))    
-    image = makeQR(targetUrl)
-    return HttpResponse(image, content_type='image/png')
+    return HttpResponse(voucher.image, content_type='image/png')
 
 
 def verify_voucher(request, id):
@@ -116,8 +120,4 @@ def makeQR(myData):
 
     conn.request("POST", "/qr/custom", payload, headers)
 
-    res = conn.getresponse()
-    data = res.read()
-
-    print(data)
-    return data
+    return conn.getresponse().read() 
