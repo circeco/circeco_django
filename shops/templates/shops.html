@@ -5,29 +5,34 @@
 
 <div class="row row-flex">
 	{% for shop in shops %}
-	<div class="card z-depth-5 col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-		<div class="card-content">
-			<h3>{{ shop.name }}</h3>
-			<p class="shop-description">{{ shop.description }}</p>
-			<p class="shop-web">{{ shop.webURL }}</p>
-			<p>{{ shop.serviceType }}</p>
-			<div class="input-group">
-				<span class="input-group-btn">
-                    <button 
-                        onclick="toggleFav(this, {{ shop.id }}, '{{ csrf_token }}')" 
-                        class="btn-floating waves-effect waves-light teal" type="submit">
-                            <i class="medium material-icons">
-                                {% if shop.id in favs %}
-                                    star
-                                {% else %}
-                                    star_border
-                                {% endif %}
-                            </i>
-                    </button>
-                </span>
-			</div>
-            
-		</div>
+	<div class="card z-depth-5">
+        <div class="input-group fav-star">
+            <span class="input-group-btn">
+                <button 
+                    onclick="toggleFav(this, {{ shop.id }}, '{{ csrf_token }}')" 
+                    class="btn-floating waves-effect waves-light" type="submit">
+                        <i class="medium material-icons">
+                            {% if shop.id in favs %}
+                                star
+                            {% else %}
+                                star_border
+                            {% endif %}
+                        </i>
+                </button>
+            </span>
+        </div>
+        <p class="card-title">{{ shop.name }}</p>
+        <div class="initiative-type">
+            {% if shop.serviceType == 'Reuse' %}
+                <p class="cyan darken-4">{{ shop.serviceType }}</p>
+            {% elif shop.serviceType == 'Repair' %}
+                <p class="cyan darken-3">{{ shop.serviceType }}</p>
+            {% elif shop.serviceType == 'Recycle' %}
+                <p class="cyan darken-2">{{ shop.serviceType }}</p>
+            {% endif %}
+        </div>
+        <p class="shop-description">{{ shop.description }}</p>
+        <p><a class="shop-web" target="_blank" href="https://{{ shop.webURL }}">{{ shop.webURL }}</a></p>  
 	</div>
 	{% endfor %}
 </div>

@@ -68,7 +68,6 @@ nav .brand-logo {
 .row.row-flex {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 30px;
 }
 
 .row {
@@ -108,15 +107,47 @@ form {
     width: 300px;
     height: 400px;
     margin: 5% auto;
-}
-
-.card .card-content {
-    padding: 0;
+    border-radius: 5px;
 }
 
 .card-title {
     font-family: 'Bebas Neue', sans-serif;
-    padding: 30px 20px;
+    padding: 0 20px;
+}
+
+.fav-star {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}
+
+.fav-star button{
+    background-color: #134f5cff;
+}
+
+.shop-web {
+    bottom: 0;
+    font-size: 16px;
+    padding: 20px;
+    position: absolute;
+    color: teal;
+}
+
+.shop-web:hover {
+    color:#FF5252;
+}
+
+.initiative-type {
+    text-align: right;
+    color: white;
+}
+
+.initiative-type p {
+    padding: 10px;
+}
+
+.shop-description {
+    padding: 10px 20px;
 }
 
 
