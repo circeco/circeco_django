@@ -17,33 +17,35 @@
 
 {% block content %}
 <div class="row row-flex">
-    
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
-            <div class="panel-body">
-
-                <h3>Voucher</h3>
-
-                <form id="payment-form" method="post" action="{% url 'create_voucher' %}">
-                    {% csrf_token %}
-
-                    <div id="credit-card-errors" style="display: none;">
-                        <div class="alert-message block-message error" id="stripe-error-message"></div>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        {{ form | materializecss }}
-                    </div>
-
-                    <div class="input-group">
-                        <span class="input-group-btn">
-                            <button class="btn btn-success" type="submit">Buy</button>
-                        </span>
-                    </div>
-
-                </form>
-
+    <div class="card voucher z-depth-5 col 10">
+        <div class="card-content row-flex">
+            <div class="col s12 m4 l4"><img id="recycle-logo" src="/static/img/recycle-logo.png" alt="recycle"></div>
+            <div class="col s12 m4 l4">
+                <h5>Buy your <span>VOUCHER </span> to spend in <span>CIRCULAR</span> shops!</h5>
             </div>
+            <div class="col s12 m4 l4"><img id="qrcode" src="/static/img/test-qrcode.png" alt="voucher"></div>
         </div>
-    
+    </div>
 </div>
+
+ 
+<div class="row row-flex">
+    <div class="col 10 card panel-body payment-form">
+        <form id="payment-form" method="post" action="{% url 'create_voucher' %}">
+            {% csrf_token %}
+            <div id="credit-card-errors" style="display: none;">
+                <div class="alert-message block-message error" id="stripe-error-message"></div>
+            </div>
+            <div class="form-group col-md-6">
+                {{ form | materializecss }}
+            </div>
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-success" type="submit">Buy</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>   
+
 {% endblock %}

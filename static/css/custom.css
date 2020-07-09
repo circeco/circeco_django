@@ -19,7 +19,6 @@ body {
     border-radius: 0px;
 }
 
-
 nav ul a, nav .brand-logo {
     color: black;
     max-height: 64px;
@@ -66,8 +65,14 @@ nav .brand-logo {
     text-decoration-skip: ink;
 }
 
+.row.row-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
 .row {
-    margin: 80px;
+    margin: 80px auto;
 }
 
 div.alert {
@@ -84,7 +89,9 @@ form {
     bottom: 0px;
     margin-left: 20px;
     font-size: 14px;
-    color: #A9A9A9
+    color: #A9A9A9;
+    background-color: white;
+    z-index: -9999;
 }
 
 #author a:hover {
@@ -113,91 +120,47 @@ form {
 }
 
 
+/*--------------Vouchers*/
 .voucher {
-    width: 100%;
+    width: 80%;
     height: auto;
     border-style: dashed;
-    border-radius: 15px;
     border-color: #134f5cff;
-}
-
-.voucher h1 {
-    font-size: 30px;
-    font-family: 'Chathura', sans-serif;
-    font-weight: 700;
+    padding: 5%;
+    border-radius: 15px;
+    text-align: center;
+    margin: auto;
 }
 
 #qrcode {
     width: 100%;
-    padding: 5%;
+    padding: 15%;
 }
 
 #recycle-logo {
-    width: 100%;
-    margin: 15%;
+    height: 120px;
+    margin: 15% 0;
 }
 
-
-/*---------------------initial-codes (to delete)*/
-
-footer {
-    margin-top: 40px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-top: 1px solid #ededed;
-    color: #A9A9A9;
+.voucher h5 {
+    padding-top: 15%;
+    color: #134f5cff;
+    font-weight: bold;
+    line-height: 1.5;
 }
 
-.icon-bar {
-    background-color: #fff;
-}
-
-.accountform {
-    padding-top: 20px;
-}
-
-.badge {
-    padding-left: 9px;
-    padding-right: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    border-radius: 9px;
-}
-
-.label-warning[href],
-.badge-warning[href] {
-    background-color: #c67605;
-}
-
-.product {
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto;
-}
-
-caption p {
-    word-wrap: break-word;
-}
-
-.row.row-flex {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.panel-default {
-    border-color: transparent;
-    padding: 0 10px;
+.voucher span {
+    color: #FF5252;
 }
 
 .panel-body {
     height: 100%;
     border: 1px solid #ddd;
+    border-radius: 15px;
 }
 
-.product-description {
-    min-height: 40px;
+.payment-form {
+    width: 500px;
+    height: auto;
+    margin: 5% auto;
 }
