@@ -10,6 +10,7 @@
      <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="stylesheet" href="/static/css/index.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -56,7 +57,6 @@
     </header>
 
 
-
     {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
@@ -69,14 +69,14 @@
     <div class="container">
         <div class="display">
         </div>
-        {% block content %} {% endblock %}
     </div>
-
-    <div id="author" class="container">
+    {% block content %} {% endblock %}
+    <div id="author">
         <p>@copyright 2020 circeco.org - Made by 
             <a href="https://circeco.github.io/Piero_resume/" target=”_blank”>PieroGrilli</a>
         </p>
     </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script src="/static/js/main.js"></script>

@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Chathura:100,300,400,700,800|Economica:400,400i,700,700i|Khand:300,400,500,600,700|Londrina+Outline');
+
+/*----------index page--*/
+#title_section {
+    scroll-snap-align: start;
+}
+
+#title_div {
+    height: 600px;
+}
+
+.title {
+    font-size: 90px;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Bebas Neue', cursive;
+    margin: 0;
+    padding: 0;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+}
+
+#subtitle {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Chathura', sans-serif;
+    line-height: 0.7;
+    color: #0c343dff;
+}
+
+.text {
+    position: absolute;
+    top: 360px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    list-style: none;
+    text-align: center;
+    width: fit-content;
+}
+
+#underline {
+    margin: 0;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+}
+
+.text li {
+    float: left;
+    opacity: 1;
+    transition: all 0.8s ease-in-out;
+    max-width: 2em;
+}
+
+.text li.spaced {
+    padding-left: 0.5em;
+}
+
+.text.hidden li.ghost {
+    opacity: 0;
+    max-width: 0;
+}
+
+/*------------------Circaction section--*/
+#circular_action h2 {
+    font-family: 'Bebas Neue', cursive; 
+    font-size: 50px;
+    text-align: center;
+    padding-top: 15%; 
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: #FF5252;
+    text-decoration-color: #FF5252;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+}
+
+.circactions {
+    padding:5% 0 10%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#circular_action p {
+    margin: 2% 5%;
+    font-family: 'Chathura', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    line-height: 0.8;
+}
+
+.circactions div {
+    clear:both;
+    height: 280px;
+    width: 208px;
+    margin: 2% auto;
+    border: unset;    
+}
+
+.circactions h4 {
+    font-size: 22px;
+    font-weight: 500;
+    color:white;
+    padding: 5%;
+    text-align: center;
+    top: 36%;
+    position: relative;
+}
+
+.circactions p {
+    text-align: left;
+    margin: 2% 5%;
+    color: white;
+    visibility: hidden;
+    position: absolute;
+    top: 10%;
+    font-family: 'Chathura', sans-serif;
+    font-size: 30px;
+    line-height: 0.8
+}
+
+.card:hover p {
+    visibility:visible; 
+}
+
+.card:hover h4 {
+    visibility: hidden;
+}
+
+#refuse {
+    background-color: #0c343dff;
+}
+
+#reduce {
+    background-color: #134f5cff;
+}
+
+#reuse {
+    background-color: #45818eff;
+}
+
+#repair {
+    background-color: #76a5afff;
+}
+
+#remanu {
+    background-color: #a2c4c9ff;
+}
+
+#recycle {
+    background-color: #d0e0e3ff;
+}
+
+/*--------------Search--*/
+#search-box form{
+    margin: 0 auto 220px;
+}
+
+#searchTerm {
+    width: 300px;
+}
+
+#search-btn {
+    height: 50px;
+    min-width: 140px;
+    font-size: 18px;
+}
+
+/*---------------------Circular Action animation */
+/** Reference https://tympanus.net/codrops/2012/04/17/rotating-words-with-css-animations/ **/
+
+.rw-wrapper{
+	width: 90%;
+	position: relative;
+	font-family: 'Bree Serif';
+	padding: 10px;
+    text-align: center;
+}
+
+.rw-sentence{
+	margin: 0;
+}
+
+.rw-words{
+	display: inline;
+	text-indent: 10px;
+}
+.rw-words-1 span{
+	position: absolute;
+	opacity: 0;
+	overflow: hidden;
+	color: #45818eff;
+	-webkit-animation: rotateWord 8s linear infinite 1s;
+	-ms-animation: rotateWord 8s linear infinite 1s;
+	animation: rotateWord 8s linear infinite 1s;
+}
+.rw-words-1 span:nth-child(2) { 
+    -webkit-animation-delay: 2s; 
+	-ms-animation-delay: 2s; 
+	animation-delay: 2s; 
+	color: #45818eff;
+}
+.rw-words-1 span:nth-child(3) { 
+    -webkit-animation-delay: 3s; 
+	-ms-animation-delay: 3s; 
+	animation-delay: 3s; 
+	color: #45818eff;	
+}
+.rw-words-1 span:nth-child(4) { 
+    -webkit-animation-delay: 4s; 
+	-ms-animation-delay: 4s; 
+	animation-delay: 4s; 
+	color: #45818eff;
+}
+.rw-words-1 span:nth-child(5) { 
+    -webkit-animation-delay: 5s; 
+	-ms-animation-delay: 5s; 
+	animation-delay: 5s; 
+	color: #45818eff;
+}
+.rw-words-1 span:nth-child(6) { 
+    -webkit-animation-delay: 6s; 
+	-ms-animation-delay: 6s; 
+	animation-delay: 6s; 
+	color: #45818eff;
+}
+.rw-words-1 span:nth-child(7) { 
+    -webkit-animation-delay: 7s; 
+	-ms-animation-delay: 7s; 
+	animation-delay: 7s; 
+	color: #45818eff;
+}
+.rw-words-1 span:nth-child(8) { 
+    -webkit-animation-delay: 8s; 
+	-ms-animation-delay: 8s; 
+	animation-delay: 8s; 
+	color: #45818eff;
+}
+@-webkit-keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -webkit-transform: translateY(-30px); }
+	5% { opacity: 1; -webkit-transform: translateY(0px);}
+    17% { opacity: 1; -webkit-transform: translateY(0px); }
+	20% { opacity: 0; -webkit-transform: translateY(30px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@-ms-keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -ms-transform: translateY(-30px); }
+	5% { opacity: 1; -ms-transform: translateY(0px);}
+    17% { opacity: 1; -ms-transform: translateY(0px); }
+	20% { opacity: 0; -ms-transform: translateY(30px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@keyframes rotateWord {
+    0% { opacity: 0; }
+    2% { opacity: 0; -webkit-transform: translateY(-30px); transform: translateY(-30px); }
+	5% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px);}
+    17% { opacity: 1; -webkit-transform: translateY(0px); transform: translateY(0px); }
+	20% { opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px); }
+	80% { opacity: 0; }
+    100% { opacity: 0; }
+}
+@media screen and (max-width: 768px){
+	.rw-sentence { font-size: 18px; }
+}
+@media screen and (max-width: 320px){
+	.rw-sentence { font-size: 9px; }
+}

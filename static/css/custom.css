@@ -7,6 +7,10 @@ body {
     font-size: 20px;
 }
 
+.container {
+    width: 95% !important;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     height: 3px;
@@ -84,13 +88,9 @@ form {
 }
 
 #author {
-    position: fixed;
-    bottom: 0px;
-    margin-left: 20px;
+    margin-left: 5px;
     font-size: 14px;
     color: #A9A9A9;
-    background-color: white;
-    z-index: -9999;
 }
 
 #author a:hover {
@@ -195,3 +195,4 @@ form {
     height: auto;
     margin: 5% auto;
 }
+

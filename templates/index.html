@@ -1,0 +1,105 @@
+{% extends 'base.html' %} 
+{% load static from staticfiles %}
+
+{% block page_title %}
+{{ user }}'s Profile
+{% endblock %} 
+
+{% block page_heading %}
+{{ user }}'s Profile
+{% endblock %} 
+
+{% block content %}
+
+
+<section>
+    <div id="title_section" class="section scroll">
+        <div id="title_div">
+            <ul class="text hidden title" id="underline">
+                <li id="underline">CIRC</li>
+                <li class="ghost" id="underline">ULAR</li>
+                <li id="underline" class="ghost">|</li>
+                <li id="underline">ECO</li>
+                <li id="underline" class="ghost">SYSTEM</li>
+            </ul>
+        </div>
+        <div id="subtitle">
+            <p>Alternative solutions for sustainable consumption</p>
+            <p>Promoting a circular ecosystem alternative to the wasteful take-make-disposal model</p>
+            <p>Support a network of circular business that reduce environmental impact from resource use and waste creation</p>
+            <p>Inspiring consumers action towards circular thinking</p>
+        </div>
+    </div>
+    <script src="static/js/title.js"></script>
+</section>
+
+<section id="circular_action">	
+    <div class="rw-wrapper">
+        <h2 class="rw-sentence">
+            <span>Circular Thinking</span>
+            <div class="rw-words rw-words-1">
+                <span>Refuse</span>
+                <span>Rethink</span>
+                <span>Reduce</span>
+                <span>Reuse</span>
+                <span>Repair</span>
+                <span>Refurbish</span>
+                <span>Reporpouse</span>
+                <span>Recycle</span>
+            </div>
+        </h2>
+    </div>
+    <p>reusing, reparing or sharing are examples of circular actions that help to build circular systems
+        by SLOWING AND CLOSING LOOPS of materials and products minimasing resources input and waste</p>
+
+    <div class="circactions">
+        <div class="card" id="refuse">
+            <h4>REFUSE - RETHINK</h4>
+            <p> Make overconsumption unappealing and unnecessary 
+                <br>Reduce redundancy 
+                <br>Make product use more intensive with multifunctional products and long-lasting design
+                <br>Rethinking ownership towards sharing systems</p>
+        </div>
+        <div class="card" id="reduce">
+            <h4>REDUCE</h4>
+            <p>Phase-out waste, harmful emissions and the use of non-renewable resources throughout the supply chain, while increasing efficiency
+                in product manufacturing, distribution and use 
+        </div>
+        <div class="card" id="reuse">
+            <h4>REUSE</h4>
+            <p>Extend usage time by one or several users until the product or material reaches the end of its
+                service-life and its condition does not allow to fulfil the product or material original function </p>
+        </div>
+        <div class="card" id="repair">
+            <h4>REPAIR - REFURBISH</h4>
+            <p>Mantain product functionality for longer through reparing and refurbishing so that the product or material can be used in its original functionl</p>
+        </div>
+        <div class="card" id="remanu">
+            <h4>REMANUFACTURE - REPURPOSE</h4>
+            <p>Use materials from a discarded product for making new product that have the same function
+                <br>Use a product or its part for a new product with a different function, also upcycling</p>
+        </div>
+        <div class="card" id="recycle">
+            <h4>RECYCLE</h4>
+            <p>Process material from a discarded product that in part can be used to create a new product with a
+                function that has a lower or same quality, also downcycling </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div id="subtitle">
+        <p>On this web app, you can browse circular shops, save your favourites after creating an account and buy vouchers to use in them</p>
+    </div>
+    <div id="search-box" class="text-center center-align">
+    <!--Search input-->
+        <form action="/" method="POST">
+            <input id="searchTerm" name="search" placeholder="Search for a Circular Initiative here..." required>
+            <button  id="search-btn" type="submit" class="btn btn-danger cyan darken-4 text-white">Search &nbsp; &nbsp;<i class="material-icons">search</i></button>
+        </form>        
+    </div>
+</section>
+
+
+
+{% endblock %}
