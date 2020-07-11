@@ -92,10 +92,13 @@
     <div id="subtitle">
         <p>On this web app, you can browse circular shops, save your favourites after creating an account and buy vouchers to use in them</p>
     </div>
-    <div id="search-box" class="text-center center-align">
+    <div class="row text-center center-align" id="search-box">
     <!--Search input-->
-        <form action="/" method="POST">
-            <input id="searchTerm" name="search" placeholder="Search for a Circular Initiative here..." required>
+        <form action="{% url 'search' %}" method="POST">
+            {% csrf_token %}
+            <div id="searchTerm">
+                {{ form | materializecss }}
+            </div>
             <button  id="search-btn" type="submit" class="btn btn-danger cyan darken-4 text-white">Search &nbsp; &nbsp;<i class="material-icons">search</i></button>
         </form>        
     </div>

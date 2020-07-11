@@ -5,12 +5,14 @@ from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
 from fav.models import UserFavouriteShop
 from voucher.models import Voucher
+from shops.forms import SearchShopsForm
 
 
 
 def index(request):
     """Return the index.html file"""
-    return render(request,  'index.html')
+    form = SearchShopsForm() 
+    return render(request,  'index.html', { "form": form})
 
 @login_required
 def logout(request):
