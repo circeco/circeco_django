@@ -36,7 +36,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = development
 
 ALLOWED_HOSTS = ['localhost', 
-                    os.environ.get('HOSTNAME')]
+                    os.environ.get('HOSTNAME'), 
+                    'https://circeco-django.herokuapp.com/']
 
 host = os.environ.get('SITE_HOST')
 if host:
@@ -104,16 +105,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
-if development:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-else:
-    DATABASES = {'default': dj_database_url.parse('postgres://oqgxvetmemhufz:4003d612d9f0988cf8283ef6b846ba19f17b4ae5e8d6a75b45390c27fbcaa889@ec2-54-246-85-151.eu-west-1.compute.amazonaws.com:5432/ddbfk59hpjrsem') }
 
 print("DATABASES is ", DATABASES)
 
