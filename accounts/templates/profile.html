@@ -12,7 +12,9 @@
 {% block content %}
 
 <!--User email address-->
-<p>You are logged in with: {{ profile.email }}</p>
+<div class="alert messages">
+    <p>You are logged in with: {{ profile.email }}</p>
+</div>
 
 <!--Available voucher bought by the user-->
 <div class="row row-flex">

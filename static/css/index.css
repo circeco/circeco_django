@@ -9,7 +9,7 @@
     height: 600px;
 }
 
-.title {
+#title {
     font-size: 90px;
     text-align: center;
     cursor: pointer;
@@ -41,7 +41,7 @@
     width: fit-content;
 }
 
-#underline {
+.underline {
     margin: 0;
     text-decoration-line: underline;
     -webkit-text-decoration-color: #FF5252;
@@ -156,12 +156,14 @@
 }
 
 /*--------------Search--*/
-#search-box form{
-    margin: 0 auto 220px;
+#search-box {
+    margin: 220px auto;
+    text-align: center
 }
 
 #searchTerm {
-    width: 300px;
+    width: 400px;
+    margin: 0;
 }
 
 #search-btn {
@@ -169,6 +171,34 @@
     min-width: 140px;
     font-size: 18px;
 }
+
+
+/*----------------Mobile view--*/
+@media screen and (max-width: 450px) {
+    #logo {margin: 5px}
+    nav .button-collapse {margin: 0}
+    #subtitle p {font-size: 30px}
+    #reuse, #refuse, #reduce, #repair, #remanu, #recycle {height: 120px; width: 90%}
+    .circactions h4 {top: 20%}
+    .circactions p {top:5%}
+    .rw-wrapper {width: 60% !important}
+    #author p {font-size: 8px}
+    .payment-form {margin: 5%}
+    .voucher {margin: 5%}
+}
+
+@media screen and (max-width: 900px){
+    #title {font-size: 40px; padding: 0px}
+    #subtitle p {font-size: 30px}
+    .topnav a {font-size: 24px}
+    #red-wood {height: 220px}
+    .rw-wrapper h2, span {font-size: 30px !important}
+    #circular_action h4 {font-size: 24px}
+    #sidebar {width: 98%}
+    #reuse, #refuse, #reduce, #repair, #remanu, #recycle {height: 200px}
+    #author p {font-size: 12px}
+}
+
 
 /*---------------------Circular Action animation */
 /** Reference https://tympanus.net/codrops/2012/04/17/rotating-words-with-css-animations/ **/

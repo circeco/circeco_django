@@ -1,5 +1,6 @@
 {% extends 'base.html' %} 
 {% load static from staticfiles %}
+{% load materializecss %}
 
 {% block page_title %}
 {{ user }}'s Profile
@@ -15,12 +16,12 @@
 <section>
     <div id="title_section" class="section scroll">
         <div id="title_div">
-            <ul class="text hidden title" id="underline">
-                <li id="underline">CIRC</li>
-                <li class="ghost" id="underline">ULAR</li>
-                <li id="underline" class="ghost">|</li>
-                <li id="underline">ECO</li>
-                <li id="underline" class="ghost">SYSTEM</li>
+            <ul class="text hidden underline" id="title">
+                <li class="underline">CIRC</li>
+                <li class="ghost underline">ULAR</li>
+                <li class="underline ghost">|</li>
+                <li class="underline">ECO</li>
+                <li class="underline ghost">SYSTEM</li>
             </ul>
         </div>
         <div id="subtitle">
@@ -99,6 +100,7 @@
         </form>        
     </div>
 </section>
+
 
 
 
