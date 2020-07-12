@@ -162,7 +162,7 @@
 }
 
 #searchTerm {
-    width: 400px;
+    max-width: 400px;
     margin: 0;
 }
 
@@ -185,6 +185,7 @@
     #author p {font-size: 8px}
     .payment-form {margin: 5%}
     .voucher {margin: 5%}
+    form {margin: 0 10% 10%}
 }
 
 @media screen and (max-width: 900px){

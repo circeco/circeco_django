@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<script type="text/javascript" src="/static/js/toggle-fav.js"></script>
-
+<script type="text/javascript" src="{% static 'js/toggle-fav.js' %}"></script>
 <div class="row row-flex">
 	{% for shop in shops %}
 	<div class="card z-depth-5">

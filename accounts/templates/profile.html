@@ -1,5 +1,5 @@
 {% extends 'base.html' %} 
-{% load static from staticfiles %}
+{% load static %}
 
 {% block page_title %}
 {{ user }}'s Profile
@@ -21,7 +21,7 @@
     {% for voucher in vouchers %}
     <div class="card voucher z-depth-5 col 12">
         <div class="card-content row-flex">
-            <div class="col s12 m4 l4"><img id="recycle-logo" src="/static/img/recycle-logo.png" alt="recycle"></div>
+            <div class="col s12 m4 l4"><img id="recycle-logo" src="{% static 'img/recycle-logo.png' %}" alt="recycle"></div>
             <div class="col s12 m4 l4">
                 <h5>This is your <span>{{ voucher.amount }}kr </span>voucher to spend in <span>CIRCULAR</span> shops!</h5>
             </div>

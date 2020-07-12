@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static from staticfiles %}
+{% load static %}
 {% load materializecss %}
 
 {% block head_js %}
@@ -11,7 +11,7 @@
     //]]>
 </script>
 
-<script type="text/javascript" src="/static/js/stripe.js"></script>
+<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
 
@@ -19,11 +19,11 @@
 <div class="row row-flex">
     <div class="card voucher z-depth-5 col 10">
         <div class="card-content row-flex">
-            <div class="col s12 m4 l4"><img id="recycle-logo" src="/static/img/recycle-logo.png" alt="recycle"></div>
+            <div class="col s12 m4 l4"><img id="recycle-logo" src="{% static 'img/recycle-logo.png' %}" alt="recycle"></div>
             <div class="col s12 m4 l4">
                 <h5>Buy your <span>VOUCHER </span> to spend in <span>CIRCULAR</span> shops!</h5>
             </div>
-            <div class="col s12 m4 l4"><img id="qrcode" src="/static/img/test-qrcode.png" alt="voucher"></div>
+            <div class="col s12 m4 l4"><img id="qrcode" src="{% static 'img/test-qrcode.png' %}" alt="voucher"></div>
         </div>
     </div>
 </div>
