@@ -89,10 +89,10 @@
 </section>
 
 <section>
+    <div class="row text-center center-align" id="search-box">
     <div id="subtitle">
         <p>On this web app, you can browse circular shops, save your favourites after creating an account and buy vouchers to use in them</p>
     </div>
-    <div class="row text-center center-align" id="search-box">
     <!--Search input-->
         <form action="{% url 'search' %}" method="POST">
             {% csrf_token %}
