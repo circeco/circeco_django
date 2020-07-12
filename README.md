@@ -1,40 +1,41 @@
-# Welcome to [CIRCECO](https://circeco-contribuite.herokuapp.com/)!
+# Welcome to [CIRCECO](https://circeco-django.herokuapp.com/)!
 
-![circdata](static/img/mockup-mobile.jpg)
-
+![cireco tour](/static/img/demo/circeco.gif)
 
 Do you wanna contribuite to a sustaianble future? 
 Circeco is the platform for circular economy where to find shops that sell and accept recycled and reuse stuff or also where you can repair your own stuff! 
 You can search for second hand shops for music, books, clothes, electronics and home stuff with the scope of give good hints on what good sustainable initiatives are available out there! 
 You can also add unlimited circular initiatives to share with the community and contribuiting to build a circular ecosystem! 
 
+---
+---
 
 ## Table of Contents
+
 1. [**UX**](#ux)
     - [**Project Goal**](#project-goal)
     - [**Site Owner Goal**](#site-owner-goal)
     - [**User Stories**](#user-stories)
     - [**User Expectation**](#user-expectation)
-2. [**Design**](#ux)
+2. [**Design**](#design)
     - [**Design Dependency**](#design-dependency)
     - [**Fonts**](#fonts)
-    - [**Icons**](#icons)
     - [**Colors**](#colors)
     - [**Wireframe**](#wireframe)
 3. [**Technologies Used**](#technologies-used)
-    - [**Languages**](#languages)
-    - [**Frameworks**](#frameworks)
+    - [**Front-End**](#front-end)
+    - [**Back-End**](#back-end)
 4. [**Features**](#features)
     - [**Existing**](#existing)
-    - [**Left to Implemtent**](#left-to-implement)
-5. [**Database Schema**](#Database-schema)
-6. [**Testing**](#testing)
-7. [**Deployment**](#deployment)
-8. [**Credits**](#credits)
-#
+    - [**Left to Implement**](#left-to-implement)
+5. [**Testing**](#testing)
+6. [**Deployment**](#deployment)
+7. [**Credits**](#credits)
 
 
-## 1. UX 
+---
+
+## UX 
 
 ### Project Goal
 CIRCECO aim to create a "Circular Ecosystem" through a platform for sustatainable consumption that collects suggestion and alternatives ideas to the common wasteful take-make-dispose consumption of products and services. 
@@ -78,21 +79,24 @@ The user is not necessarly expected to create an account to freely browse and ex
 However, it is required registration for more interaction like saving favorite initiatives or buying a voucher. 
 Finally, the webApp can be navigate and consumed from any device and browser. 
 
+
+##### back to [top](#table-of-contents)
+
 ---
-## 2. Design 
+## Design 
 Sleak, clean and straighforward user interface with focus on sustaianbility themes and important key words. 
 The use of colors is kept at minimum with lots of use of neutral black and white to mantain focus on key elements and to generate a crisp design. 
 
 ### Design Dependency
 [Materialize 1.0.2](https://materializecss.com/) I enjoyed using Materialize modern and professional-looking layout as a framework and the documentation was simple and clear for implementation with the ready-to-use codes.
+Icons are also from Materialize. 
 
 ### Fonts 
 [Google Font](https://fonts.google.com/) the font-family used have lettersforms that are dynamic, designed for a modular system with a good balancing and that avoide repetitiviness. Their styles are suatable for headlines, short paragraphs or single word, which is what this site is mostly made of 
   - [Khand](https://fonts.google.com/specimen/Khand?query=khand) 
   - [Bebas Neue](https://fonts.google.com/?query=Bebas+Neue)
-
-### Icons 
-[Font Awesome 5.8.1](https://fontawesome.com/) Social Icon in the footer cannot be found in Materialize so Font Awesome can provide icons for more specific needs 
+  - [Chathura](https://fonts.google.com/specimen/Chathura?selection.family=Itim&sidebar.open)
+  - [Economica](https://fonts.google.com/specimen/Economica)
 
 ### Colors 
 The eye-catching use of colors aim to highlight important reoccuring key words with the red. The red color is also a call for action for the emergency related to the state of the environmental. 
@@ -101,46 +105,254 @@ Different shades of green are also commonly recognised in the field with differe
 The custom logo created is also a reminder of the sustainability theme with different shades of green. 
 The colors employed together with the font create a specific custom theme recognizable among any other website. 
 
-- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
-- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
-- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
-- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
-- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Primary: #FF5252; "Fringy Flower" - This pastel green colour provides an elegant & efficient contrast for the strong brown colour.
+- ![#FFFFFF](https://placehold.it/15/FFFFFF/000000?text=+) Primary: #FFFFFF; "Simply White" - White is the colur of clarity and semplicity to contrast any colour.
+- ![#000000](https://placehold.it/15/000000/000000?text=+) Primary: #000000; "Black" - Elegant and efficient. 
+
+- ![#006064](https://placehold.it/15/006064/000000?text=+) Primary: #006064; "Dark Cyan" - This custom dark green-blue colour is extensively used in the website in various shades and variation, it represents the theme of the web app as well as is the main colours theme of the logo.
+- ![#FF5252](https://placehold.it/15/FF5252/000000?text=+) Secondary: #FF5252; "Light Red" - The light red highlights important key words and concept, as well as giving some contrast with other colours for some more design-appealing details. 
+
 
 ### Wireframe 
-I have not used any program to make my wireframe but I have rather made a hand sketch [here](https://github.com/circeco/circdata/blob/master/static/img/circdata-sketch.jpg).
+I have started sketching simply with a pencil and a paper and once satisfied I moved into using Keynote because it has all features, colour and styles that I needed for this sketch. 
+With Keynote I could build my muckup concept wireframe well also because I could sketch different part of the app and different pages on different slides. 
+[Here](https://db7001a1-0fdb-499d-83ae-5262fe3c1549.ws-eu01.gitpod.io/files/download/?id=81f6bae9-0f16-4813-ab88-4cc87dbc085f) you can find my mockup.
+
+
+##### back to [top](#table-of-contents)
+
+---
+## Technologies Used
+
+### Front-End
+
+* [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3)
+
+* [jQuery 3.4.1](https://code.jquery.com/jquery/) - This framework is very useful to keep the JS coding at minimum so can be used as fundation of my scripts.
+
+* [Materialize 1.0.0](https://materializecss.com/) - Used as the front-end framework for layout and design.
+
+* [Flask 1.0.2](http://flask.pocoo.org/) - This microframework is used to render the back-end Python with the Front-End Materialize.
+
+* [Stripe API](https://stripe.com/docs/api?lang=python) - Used to make payments.
+
+* [QR code](https://www.qrcode-monkey.com/qr-code-api-with-logo) - Provides API for the creation of QR codes. 
+
+* [Amazon AWS S3](https://aws.amazon.com/) - Mainly used to store staticfiles.
+
+
+### Back-End
+
+* [Python 3.6.7](https://www.python.org/) - Used as the back-end programming language.
+
+* [Heroku](https://www.heroku.com) - Used for app hosting.
+
+* [PostgreSQL 11.4](https://www.postgresql.org/) - This was usefull for relational SQL database plugin via Heroku.
+
+* [Django 1.11.29](https://www.djangoproject.com/download/) The free open-source framework is being used to render Python back-end codes with Materialize front-end codes. 
+The project was developed using an older version of Django following the lessions, despite Django 3+ being the current version. 
+An upgrade in this sense will come soon. 
+
+Further details on all Python packages used on this project can be found in the [requirements.txt](/circeco_django/requirements.txt) file.
+
+
+##### back to [top](#table-of-contents)
+
+---
+---
+## Features
+
+### Existing
+**Browse for circular shops**
+- The User can browse through a list of circular shops, read about them and find their weblink.
+
+**Search for circular shops**
+- Through the search box the user can filter by word the shops of his/her interest. 
+
+**Create a profile** 
+- The user can create a profile so to save favourite shops and buy a voucher.
+
+**Save and unsave favourite circular shop**
+- The registered user can save and unsave favourite circular shops that would be visible on his profile page. 
+At any time when the user can save or unsave favourite shops. 
+If the user is looged in would be always visible if a shop is favourite or not. 
+
+**Buy a voucher**
+- Users that have a profile can also buy a voucher to use in circular shops.
+
+**Store non sensitive user info**
+- The user profile page will store the list of favourite circular shops and the vouchers purchased by the user. 
 
 
 ---
-## 4. Technologies Used
+## Left to Implement
+**Change passowrd**
+- The users would be able to update their passwords from their profile page through reciving an email with instructions on how to reset the password.
 
-### Languages 
-* HTML 
-* CSS 
-* JavaScript 
-* JSON
-* Python
+**Receive voucher on the user's email address**
+- The user would receive the purchased voucher on the user's email address 
 
+**Filter bittons**
+- Search by filtering for specific object or their use, also a button to reverse and view them all
 
-### Frameworks 
-* [Flask 1.0.2](http://flask.pocoo.org/)
-This microframework is used to render the back-end Python with the Front-End Materialize.
-
-* [jQuery 3.2.1](https://code.jquery.com/jquery/)
-This framework is very useful to keep the JS coding at minimum so can be used as fundation of my scripts. 
+**Subscribe for news**
+- Introducing the otpion for user who register and non to subscribe with their email and receive news about circular shops
 
 
-### 
+##### back to [top](#table-of-contents)
+
+---
+---
+## Testing  
+**PLEASE NOTE**: 
+DO NOT insert your real card deatails to test this app but rather use the info in the img below
+![CARD-DETAIL](/static/img/demo/card-example.png)
+This project is been through a series of automated and manual testing. 
+Furthermore, validation sites have been used as well as compatibilitieschecks across major modern browser and devices. 
+
+### Validators 
+
+**HTML** [W3C HTML Validator](https://validator.w3.org)
+
+**CSS** [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+**JavaScript** [JShint](https://jshint.com/)
+
+**Python** [PEP8 Online](http://pep8online.com/)
 
 
+### Compatibility
 
-## 3. Features
-
-
-
-## 5. Database Schema 
+- :white_check_mark: Responsive webdesign for different devices and screen size
+- :white_check_mark: Crossbrowser testing
 
 
-## 6. Testing 
+### Automated testing
 
 [![Build Status](https://travis-ci.org/circeco/circeco_django.svg?branch=master)](https://travis-ci.org/circeco/circeco_django) 
+This project uses [Travis-CI](https://travis-ci.org/) to test Continuous Integration. 
+
+
+##### back to [top](#table-of-contents)
+
+---
+## Deployment 
+
+In order to run Circeco_django locally you are adviced to follow the steps below. 
+
+Before starting make sure you have the following:
+
+- [Python3](https://www.python.org/downloads) to run the application.
+- [GIT](https://www.atlassian.com/git/tutorials/install-git) for cloning and version control.
+- [Microsoft Visual Studio Code](https://code.visualstudio.com) (or any suitable IDE) to develop your project.
+- [PIP](https://pip.pypa.io/en/stable/installing) to install all requirements for the app.
+
+Also, You will <strong>need to</strong> create accounts with the following online services in order to run this project.
+- [Stripe](https://stripe.com/en-se) for the payment service.
+- [QRcodeMonkey](https://www.qrcode-monkey.com) for the QR code creation for the voucher. 
+
+
+## Instructions:
+
+WARNING: You may need to follow a different guide based on the OS you are using, read more [here](https://python.readthedocs.io/en/latest/library/venv.html")
+
+
+* 1: <strong>Clone</strong> circeco_django repository by either downloading from <a href="https://github.com/Circeco/circeco_django">here</a> or type the following command into your terminal.
+```bash
+git clone https://github.com/circeco/circeco_django
+```
+* 2: <strong>Navigate</strong> to this folder in your terminal.
+* 3: <strong>Enter</strong> the following command into your terminal.
+```bash
+python3 -m .venv venv
+```
+* 4: <strong>Initialize</strong> the environment by using the following command.
+```bash
+.venv\bin\activate
+```
+
+* 5: <strong>Install</strong> the requirements and dependancies from the requirements.txt file
+```bash
+pip3 -r requirements.txt
+```
+
+* 6: Within your IDE now <strong>create</strong> a file where you can store your secret information for the app, I used vscodes settings.json however you can just create an env.py file if you wish.
+
+```bash
+{
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "files.autoSave": "onFocusChange",
+    "files.useExperimentalFileWatcher": true,
+    "terminal.integrated.env.osx": {
+      "SECRET_KEY": "<your_secret_key_here>",
+      "DEV": "1",
+      "STRIPE_PUBLISHABLE": "<your_stripe_publishable_key_here>",
+      "STRIPE_SECRET": "<your_stripe_secret_key_here>",
+      "DATABASE_URL": "<your_database_url_here>",
+}
+```
+
+* 7: <strong>Enter</strong> the following command into the terminal to migrate models into database.
+```bash
+python3 manage.py migrate
+```
+
+* 8: Then you need to <strong>Create</strong> a 'superuser' for the project using the terminal, enter the following command.
+```bash
+python3 manage.py createsuperuser
+```
+
+Once the database migrations and superuser have been successfully completed, Django should migrate the existing *migrations.py* files from each app to configure a relational schema.
+
+* 9: The app can now be ran locally using the following command.
+```bash
+python3 manage.py runserver
+```
+
+Congratulations, CIRCECO is now running locally!
+
+### Deploying CIRCECO to Heroku:
+
+* 1: <strong>Create</strong> a requirements.txt file using the following command.
+```bash
+pip3 freeze > requirements.txt
+```
+
+* 2: <strong>Create</strong> a procfile with the following command.
+```bash
+echo web: python3 app.py > Procfile
+```
+* 3: Push these newly created files to your repository.
+* 4: Create a new app for this project on the Heroku Dashboard.
+* 5: Select your deployment method by clicking on the deployment method button and select GitHub.
+* 6: On the dashboard, set the following config variables:
+
+**Key**|**Value**
+:-----:|:-----:
+DATABASE\_URL|<your\_database\_url>
+SECRET\_KEY|<your\_secret\_key>
+STRIPE\_PUBLISHABLE|<your\_stripe\_publishable\_key>
+STRIPE\_SECRET|<your\_stripe\_secret\_key>
+
+* 7: <strong>Click</strong> the deploy button on the heroku Dashboard.
+* 8: Wait for the build to finish and click the view project link once it has!
+
+Congratulations, CIRCECO is now hosted on Heroku and is live!
+
+
+##### back to [top](#table-of-contents)
+
+---
+## Credits
+Styles and logos are custom made or in-line referenced. 
+Circeco.org holds the copyright for the business idea, content and codes of this repository. 
+
+### Authors and Acknowledgment:
+- **Autor**: Author **Piero Grilli** can be contacted at grilli.piero@circeco.org
+- **Acknowledgment**: Code Institute Slack, Code Institute Tutor Support and mentors. 
+- Massive thanks to [Andreas Nyberg](https://github.com/middlewareman) my local mentor, tutor and one of mine greatest supporter!
+
+##### back to [top](#table-of-contents)
