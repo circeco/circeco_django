@@ -35,10 +35,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = development
 
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
-                 '127.0.0.1', 
-                    'https://circeco-django.herokuapp.com/']
-
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'localhost',
+                 os.environ.get('HOSTNAME')]
 
 # Application definition
 
