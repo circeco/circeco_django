@@ -15,7 +15,6 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required()
 def choose_voucher(request): 
-    # TODO instantiate form and pass it to rendering
     form = BuyVoucherForm()
     return render(request, 'choose_voucher.html', {"form": form, "publishable": settings.STRIPE_PUBLISHABLE})
 
@@ -41,13 +40,12 @@ def create_voucher(request):
         messages.error(request, "You have successfully paid")
 
         newVoucher = Voucher(user=user, amount=amount)       
-        newVoucher.save() # TODO Check for error!
+        newVoucher.save() 
         
         return redirect(reverse('profile'))
     else:
         messages.error(request, "Unable to take payment")
 
-    # If we get here there has been no payment!
     return render(request, 'choose_voucher.html', {"form": form, "publishable": settings.STRIPE_PUBLISHABLE})
 
 
@@ -64,9 +62,9 @@ def display_QR(request, id):
         
     if voucher.image == None:
         targetUrl = request.build_absolute_uri(reverse('verify_voucher', args=(voucher.id,)))    
-        image = makeQR(targetUrl) # TODO Check for error!
+        image = makeQR(targetUrl) 
         voucher.image = image
-        voucher.save() # TODO Check for error
+        voucher.save() 
 
     return HttpResponse(voucher.image, content_type='image/png')
 
