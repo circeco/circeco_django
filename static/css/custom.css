@@ -84,7 +84,11 @@ div.alert {
 }
 
 form {
-    margin: 0 30% 20%;
+    margin:0 30% 20%;
+}
+
+#payment-form {
+    margin: 10% !important;
 }
 
 #author {
