@@ -9,6 +9,7 @@ from .forms import BuyVoucherForm
 from circeco_django import settings
 import json
 from django.http.response import HttpResponse, HttpResponseForbidden, HttpResponseNotFound
+import os
 
 stripe.api_key = settings.STRIPE_SECRET
 
@@ -61,8 +62,9 @@ def display_QR(request, id):
         return HttpResponseForbidden("Naughty, naughty!")
         
     if voucher.image == None:
-        targetUrl = request.build_absolute_uri(reverse('verify_voucher', args=(voucher.id,)))    
-        image = makeQR(targetUrl) 
+        hostname = os.environ.get('HOSTNAME')
+        relative = reverse('verify_voucher', args=(voucher.id,))
+        image = makeQR(f'https://{hostname}{relative}') 
         voucher.image = image
         voucher.save() 
 
