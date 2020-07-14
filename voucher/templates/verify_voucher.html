@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-<p>Voucher is {{ voucher }} </p>
-
+<div class="card voucher">
+    <h5 style="padding:0">This voucher is worth <span>{{ voucher.amount }} </span>kr</h5>
+</div>
 {% endblock %}
